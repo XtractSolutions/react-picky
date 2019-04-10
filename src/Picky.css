@@ -114,3 +114,12 @@
   position: relative;
   height: 30px;
 }
+.picky__placeholder {
+  width: calc(100% - 20px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.picky__option_body {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
