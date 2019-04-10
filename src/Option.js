@@ -45,7 +45,9 @@ const Option = props => {
         aria-label={body}
         data-testid={'option-checkbox'}
       />
-      {body}
+      <div className={'picky__option_body'}>
+        {body}
+      </div>
     </div>
   );
 };

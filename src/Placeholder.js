@@ -62,9 +62,9 @@ const Placeholder = ({
   }
 
   return (
-    <span className="picky__placeholder" data-testid="picky_placeholder">
+    <div className="picky__placeholder" data-testid="picky_placeholder">
       {message}
-    </span>
+    </div>
   );
 };
 
