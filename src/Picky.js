@@ -288,6 +288,7 @@ class Picky extends React.PureComponent {
     // If keep open then don't toggle dropdown
     // If radio and not keepOpen then auto close it on selecting a value
     // If radio and click to the filter input then don't toggle dropdown
+    e.stopPropagation();
     const keepOpen = this.props.keepOpen || this.props.multiple;
     if (this.node && this.node.contains(e.target) && keepOpen) {
       return;
@@ -326,7 +327,6 @@ class Picky extends React.PureComponent {
         capture: true,
       });
     }
-
     this.setState(
       state => {
         return {
