@@ -25,7 +25,7 @@ class Picky extends React.PureComponent {
       open: props.open,
       filtered: false,
       filteredOptions: [],
-      id: generateGuid(),
+      id: props.id || generateGuid(),
       allSelected: false,
     };
     this.toggleDropDown = this.toggleDropDown.bind(this);
@@ -492,6 +492,7 @@ Picky.propTypes = {
     PropTypes.number,
     PropTypes.object,
   ]),
+  id: PropTypes.string,
   numberDisplayed: PropTypes.number,
   multiple: PropTypes.bool,
   options: PropTypes.array.isRequired,
