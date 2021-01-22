@@ -57,7 +57,10 @@ describe('Picky', () => {
     const renderListProp = jest.fn();
     const renderProp = jest.fn();
     renderListProp.mockReturnValue(<p />);
-    const options = [{ id: 1, name: '1' }, { id: 2, name: '2' }];
+    const options = [
+      { id: 1, name: '1' },
+      { id: 2, name: '2' },
+    ];
     mount(
       <Picky
         value={[]}
@@ -512,7 +515,10 @@ describe('Picky', () => {
     });
 
     it('should filter object arrays', () => {
-      const options = [{ id: 1, name: 'Item 1' }, { id: 2, name: 'Item 3' }];
+      const options = [
+        { id: 1, name: 'Item 1' },
+        { id: 2, name: 'Item 3' },
+      ];
       const wrapper = mount(
         <Picky
           options={options}
@@ -913,7 +919,10 @@ describe('Picky', () => {
     });
 
     test('should correctly update allSelected when values set programmatically', () => {
-      const options = [{ id: 1, name: 'Item 1' }, { id: 2, name: 'Item 2' }];
+      const options = [
+        { id: 1, name: 'Item 1' },
+        { id: 2, name: 'Item 2' },
+      ];
       const { getByTestId, rerender } = rtlRender(
         <Picky
           options={options}
@@ -936,7 +945,10 @@ describe('Picky', () => {
           labelKey="name"
           open={true}
           multiple
-          value={[{ id: 2, name: 'Item 2' }, { id: 1, name: 'Item 1' }]}
+          value={[
+            { id: 2, name: 'Item 2' },
+            { id: 1, name: 'Item 1' },
+          ]}
         />
       );
 

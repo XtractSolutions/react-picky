@@ -49,7 +49,9 @@ class Picky extends React.PureComponent {
   }
 
   componentWillUnmount() {
-    document.removeEventListener('click', this.handleOutsideClick, false);
+    document.removeEventListener('click', this.handleOutsideClick, {
+      capture: true,
+    });
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
@@ -315,10 +317,14 @@ class Picky extends React.PureComponent {
   toggleDropDown() {
     if (!this.state.open) {
       // Add event listener to listen for clicks to determine if click occured outside the component or not
-      document.addEventListener('click', this.handleOutsideClick, false);
+      document.addEventListener('click', this.handleOutsideClick, {
+        capture: true,
+      });
     } else {
       // Remove
-      document.removeEventListener('click', this.handleOutsideClick, false);
+      document.removeEventListener('click', this.handleOutsideClick, {
+        capture: true,
+      });
     }
 
     this.setState(
