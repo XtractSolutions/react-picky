@@ -1,4 +1,5 @@
 import Picky from './Picky';
+export { Picky };
 
 // https://tc39.github.io/ecma262/#sec-array.prototype.findIndex
 if (!Array.prototype.findIndex) {
