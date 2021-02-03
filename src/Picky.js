@@ -101,6 +101,11 @@ class Picky extends React.PureComponent {
     } else {
       this.props.onChange(val);
     }
+
+    const keepOpen = this.props.keepOpen || this.props.multiple;
+    if (!keepOpen) {
+      this.toggleDropDown();
+    }
   }
   /**
    * Get the value of a given option or value safely
@@ -288,7 +293,6 @@ class Picky extends React.PureComponent {
     // If keep open then don't toggle dropdown
     // If radio and not keepOpen then auto close it on selecting a value
     // If radio and click to the filter input then don't toggle dropdown
-    e.stopPropagation();
     const keepOpen = this.props.keepOpen || this.props.multiple;
     if (this.node && this.node.contains(e.target) && keepOpen) {
       return;
@@ -300,7 +304,11 @@ class Picky extends React.PureComponent {
     ) {
       return;
     }
-    this.toggleDropDown();
+
+    if (this.node && !this.node.contains(e.target)) {
+      e.stopPropagation();
+      this.toggleDropDown();
+    }
   }
 
   focusFilterInput(isOpen) {
