@@ -23,6 +23,7 @@
 .picky__input--disabled,
 .picky__input--disabled + .picky__dropdown .option {
   color: rgb(95, 94, 94);
+  background-color: #eee;
 }
 .picky__input::after {
   position: absolute;
