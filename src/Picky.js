@@ -401,6 +401,7 @@ class Picky extends React.PureComponent {
             'picky__input',
             disabled ? 'picky__input--disabled' : '',
           ].join(' ')}
+          disabled={disabled}
           data-testid="picky-input"
           onClick={this.toggleDropDown}
         >
